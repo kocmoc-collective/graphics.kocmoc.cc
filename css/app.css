@@ -1,0 +1,57 @@
+.site {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.site-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.site-title {
+  font-size: 1em;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  padding-top: 10px;
+  border-top: 1px solid;
+}
+
+.site-main {
+  padding: 40px 0;
+}
+
+.page-title {
+  font-weight: normal;
+}
+
+.archive .entry-header .entry-title {
+  margin-bottom: 0;
+}
+
+.archive .entry-header .entry-title a {
+  color: #00e8a2;
+}
+
+/* Print Button
+--------------------------------------------- */
+
+.button.print {
+  display: block;
+  margin: 40px 0;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #00e8a2;
+  color: #212121;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button.print:hover,
+.button.print:focus {
+  text-decoration: none;
+}
