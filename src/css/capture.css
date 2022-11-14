@@ -1,0 +1,119 @@
+/*--------------------------------------------------------------
+# Poster
+--------------------------------------------------------------*/
+
+.site-main.poster {
+  margin: 3rem auto;
+}
+
+/* Capture
+--------------------------------------------- */
+
+.poster .capture {
+  position: relative;
+  width: 1080px;
+  height: 1080px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.poster.stories-layout .capture {
+  width: 1080px;
+  height: 1920px;
+}
+
+.poster .capture > .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 60px 120px;
+}
+
+.poster.stories-layout .capture > .container {
+  padding: 270px 60px 270px;
+}
+
+/* Featured Image
+  --------------------------------------------- */
+
+.poster .capture .featured-image {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.poster .capture .featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.5;
+}
+
+/* Entry Header
+  --------------------------------------------- */
+
+.poster .capture .entry-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.poster .capture .station-title {
+  font-size: 36px;
+}
+
+.poster .capture .station-tagline {
+  font-size: 24px;
+}
+
+.poster .capture .station-logo {
+  display: block;
+  width: 110px;
+  height: 110px;
+}
+
+.poster .capture .station-logo svg {
+  fill: var(--text-base);
+}
+
+/* Entry Content
+  --------------------------------------------- */
+
+.poster .capture .entry-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.poster .capture .radio-show-title {
+  font-size: 72px;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Entry Footer
+  --------------------------------------------- */
+.poster .capture .entry-footer {
+  border-top: 2px solid;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Print
+  --------------------------------------------- */
+
+.poster .print {
+  margin: 3rem auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}

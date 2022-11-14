@@ -1,0 +1,346 @@
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Box sizing
+--------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Fonts
+--------------------------------------------- */
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Regular.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Medium.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Bold.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Theme Variables
+--------------------------------------------- */
+
+/* Root */
+:root {
+  --font-family-base: 'Univers', sans-serif;
+  --font-family-secondary: 'VT323', sans-serif;
+
+  --font-size-sm: 0.889rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  /* Range: from 1.25rem to 1.563rem */
+  --font-size-lg: clamp(1.25rem, calc(1.25rem + ((1vw - 0.2rem) * 0.2236)), 1.563rem);
+  --font-size-xl: 2.441rem;
+
+  --font-weight-base: normal;
+  --font-weight-medium: 500;
+  --font-weight-bold: bold;
+
+  --bg-base: #141414;
+  --text-base: #fff;
+  --text-accent: #00e8a2;
+
+  --border-base: #3d3d3d;
+
+  --container-base: 2560px;
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-xxl: 1320px;
+  --container-fluid: 100%;
+}
+
+/* Typography
+--------------------------------------------- */
+
+html {
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: var(--text-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-base);
+  font-size: var(--font-size-base);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+  margin: 0;
+}
+
+hr {
+  background-color: var(--border-base);
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+  margin: 0 0 1.5rem 3rem;
+}
+
+ul {
+  list-style: disc;
+  margin: 1.5rem 0;
+  padding: 0 0 0 3rem;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+  display: inline-block;
+  color: var(--text-base);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-color: var(--text-accent);
+}
+
+a:visited {
+  color: var(--text-base);
+}
+
+a:hover {
+  color: var(--text-base);
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* Buttons
+--------------------------------------------- */
+
+button {
+  background-color: transparent;
+  border: 2px solid;
+  color: var(--text-base);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/* Site
+--------------------------------------------- */
+
+.site {
+  max-width: var(--container-base);
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+}
+
+/* Site Header
+--------------------------------------------- */
+.site-header {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+}
+
+.main-nav {
+  padding: 1.5rem 20px;
+}
+
+@media (min-width: 768px) {
+  .site-header .main-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.site-title {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+}
+
+.site-header .main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .site-header .main-menu {
+    margin-top: 0.75rem;
+  }
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee .entry-title {
+  margin: 0;
+  padding-right: 3rem;
+  font-size: clamp(4.236rem, calc(4.236rem + ((1vw - 0.2rem) * 4.895)), 11.089rem);
+  font-weight: var(--font-weight-base);
+}
+
+/* Site Main
+--------------------------------------------- */
+
+.site-main {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+}
+
+/* Site Footer
+--------------------------------------------- */
+
+.site-footer {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-footer .logo svg {
+  display: block;
+  width: clamp(4.236rem, calc(4.236rem + ((1vw - 0.2rem) * 1.87)), 6.854rem);
+  height: auto;
+  fill: var(--text-base);
+}
+
+.site-footer .links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+:is(.index, .application, .submit, .schedule, .support) .entry-header {
+  max-width: var(--container-fluid);
+  margin: 1.5rem 0;
+  padding: 0;
+  position: sticky;
+  top: 20px;
+  z-index: 1;
+}
+
+:is(.index, .application, .submit, .schedule, .support) .entry-content {
+  max-width: var(--container-md);
+  margin: 3rem 0 3rem auto;
+  padding: 0 20px;
+}
+
+/* Schedule
+--------------------------------------------- */
+
+#schedule > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#schedule > ul > li {
+  position: relative;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-base);
+}
+
+#schedule > ul > li .title {
+  font-weight: var(--font-weight-bold);
+}
