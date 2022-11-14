@@ -18,14 +18,16 @@
 			<nav class="main-nav">
 
 				<h1 class="site-title">
-					<a href="/">DOCS.KOCMOC.CC</a>
+					<a href="https://graphics.kocmoc.cc/posters">GRAPHICS.KOCMOC.CC</a>
 				</h1>
 
 				<ul class="main-menu">
-					<li><a href="application">Application</a></li>
-					<li><a href="submit">Submitting Shows</a></li>
-					<li><a href="schedule">Program Schedule</a></li>
-					<li><a href="support">Support</a></li>
+					<li><a href="https://docs.kocmoc.cc/application">Application</a></li>
+					<li><a href="https://docs.kocmoc.cc/submit">Submitting Shows</a></li>
+					<li><a href="https://docs.kocmoc.cc/schedule">Program Schedule</a></li>
+					<li><a href="https://graphics.kocmoc.cc/posters">Web Graphics</a></li>
+					<li><a href="https://docs.kocmoc.cc/support">Support</a></li>
+					<a href="https://kocmoc.live" target="_blank" rel="noopener noreferrer">KOCMOC.LIVE</a>
 				</ul>
 
 			</nav>

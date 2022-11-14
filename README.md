@@ -1,7 +1,7 @@
-GRAPHICS.KOCMOC.CC
+KOCMOC Web Graphics
 ===
 
-WordPress theme for GRAPHICS.KOCMOC.CC.
+Theme for graphics.kocmoc.cc
 
 ---
 

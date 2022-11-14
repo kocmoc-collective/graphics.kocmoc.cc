@@ -23,6 +23,13 @@ html {
 --------------------------------------------- */
 
 @font-face {
+  font-family: 'Material-Icons';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/material/Material-Icons.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Univers';
   src: url('../fonts/univers/Univers-Next-Regular.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Regular.woff') format('woff');
   font-style: normal;
@@ -50,6 +57,7 @@ html {
 :root {
   --font-family-base: 'Univers', sans-serif;
   --font-family-secondary: 'VT323', sans-serif;
+  --font-family-icon-base: 'Material-Icons', sans-serif;
 
   --font-size-sm: 0.889rem;
   --font-size-base: 1rem;
@@ -62,8 +70,8 @@ html {
   --font-weight-medium: 500;
   --font-weight-bold: bold;
 
-  --bg-base: #141414;
-  --text-base: #fff;
+  --bg-base: #adadad;
+  --text-base: #000000;
   --text-accent: #00e8a2;
 
   --border-base: #3d3d3d;
@@ -81,7 +89,7 @@ html {
 --------------------------------------------- */
 
 html {
-  font-size: 16px;
+  font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
@@ -107,6 +115,12 @@ h1 {
 h2 {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
   line-height: 1.2;
 }
 
@@ -161,7 +175,7 @@ img {
 }
 
 figure {
-  margin: 0;
+  margin: 1rem 0;
 }
 
 /* Links
@@ -188,6 +202,13 @@ a:active {
   outline: 0;
 }
 
+a[target='_blank']::after {
+  font-family: var(--font-family-icon-base);
+  content: '\f8ce';
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
 /* Buttons
 --------------------------------------------- */
 
@@ -202,6 +223,21 @@ button {
   margin: 0;
   font-weight: var(--font-weight-medium);
   text-decoration: none;
+}
+
+/* Icons
+--------------------------------------------- */
+
+.icon {
+  font-family: 'Material';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
 /*--------------------------------------------------------------
@@ -308,7 +344,7 @@ button {
 # Pages
 --------------------------------------------------------------*/
 
-:is(.index, .application, .submit, .schedule, .support) .entry-header {
+:is(.index, .posters) .entry-header {
   max-width: var(--container-fluid);
   margin: 1.5rem 0;
   padding: 0;
@@ -317,30 +353,25 @@ button {
   z-index: 1;
 }
 
-:is(.index, .application, .submit, .schedule, .support) .entry-content {
+:is(.index, .posters) .entry-content {
   max-width: var(--container-md);
   margin: 3rem 0 3rem auto;
   padding: 0 20px;
 }
 
-/* Schedule
+/* Posters
 --------------------------------------------- */
 
-#schedule > ul {
+.posters .entry-content article {
+  margin-bottom: 1.5rem;
+}
+
+.posters .entry-content article h3 {
   margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column-reverse;
 }
 
-#schedule > ul > li {
-  position: relative;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border-base);
-}
-
-#schedule > ul > li .title {
-  font-weight: var(--font-weight-bold);
+:is(.posters) .posts-navigation {
+  max-width: var(--container-md);
+  margin: 3rem 0 3rem auto;
+  padding: 0 20px;
 }

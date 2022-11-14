@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Kocmoc functions and definitions
+ * Functions and definitions
  */
 
 function kocmoc_setup()
@@ -48,3 +48,29 @@ function kocmoc_scripts()
 	wp_enqueue_script('app', get_template_directory_uri() . '/src/js/app.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'kocmoc_scripts');
+
+/**
+ * Change Posts Per Page for Posters Archive
+ */
+
+function poster_posts_per_page($query)
+{
+
+	if ($query->is_main_query() && !is_admin() && is_post_type_archive('poster')) {
+		$query->set('posts_per_page', '100');
+	}
+}
+add_action('pre_get_posts', 'poster_posts_per_page');
+
+/**
+ * Change the Archive title
+ */
+
+function kocmoc_archive_title($title)
+{
+	if (is_post_type_archive()) {
+		$title = post_type_archive_title('', false);
+	}
+	return $title;
+}
+add_filter('get_the_archive_title', 'kocmoc_archive_title');

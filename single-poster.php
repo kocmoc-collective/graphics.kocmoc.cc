@@ -25,8 +25,8 @@
                     <div class="entry-header">
 
                         <div class="station-branding">
-                            <div class="station-title">KOCMOC</div>
-                            <div class="station-tagline">Freeform Radio Broadcasting</div>
+                            <div class="station-title"><?php esc_html_e('KOCMOC', 'kocmoc'); ?></div>
+                            <div class="station-tagline"><?php esc_html_e('Freeform Radio Broadcasting', 'kocmoc'); ?></div>
                         </div>
 
                         <div class="station-logo">
@@ -48,10 +48,10 @@
                         <div class="radio-show-date">
                             <span class="radio-show-day"><?php the_field('radio_show_date'); ?> / </span>
                             <span class="radio-show-start-time"><?php the_field('radio_show_start_time'); ?> - </span>
-                            <span class="radio-show-end-time"><?php the_field('radio_show_end_time'); ?> GMT+2 (EET)</span>
+                            <span class="radio-show-end-time"><?php the_field('radio_show_end_time'); ?> <?php esc_html_e('GMT+2 (EET)', 'kocmoc'); ?></span>
                         </div>
 
-                        <div class="station-link">KOCMOC.LIVE</div>
+                        <div class="station-link"><?php esc_html_e('KOCMOC.LIVE', 'kocmoc'); ?></div>
 
                     </div>
 
@@ -60,10 +60,8 @@
             </div>
 
             <div class="print">
-                <button onclick="capture()">Print</button>
+                <button onclick="capture()"><?php esc_html_e('Print', 'kocmoc'); ?></button>
             </div>
-
-
 
             <script>
                 function capture() {

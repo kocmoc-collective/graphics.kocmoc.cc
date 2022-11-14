@@ -1,18 +1,20 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main">
+<main class="site-main">
 
 	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
-			<?php get_template_part('template-parts/content', get_post_type()); ?>
+			<!-- The Content -->
 
 		<?php endwhile; ?>
 
 		<?php the_posts_navigation(); ?>
 
-	<?php else : get_template_part('template-parts/content', 'none'); ?>
+	<?php else : ?>
+
+		<!-- Nothing Found -->
 
 	<?php endif; ?>
 
